@@ -22,9 +22,6 @@ public class Voting {
         this.candidateAdapter = candidateAdapter;
         this.context = context;
         listOfCandidate = new ArrayList<Candidate>();
-        this.candidateAdapter.setData(listOfCandidate);
-        startDBConnection();
-        candidateAdapter.notifyDataSetChanged();
     }
 
     void startDBConnection() {
@@ -42,6 +39,9 @@ public class Voting {
             candidateAdapter.notifyDataSetChanged();
         }
         candidateAdapter.setSum(sum);
+        this.candidateAdapter.setData(listOfCandidate);
+        candidateAdapter.notifyDataSetChanged();
+
     }
 
     void addCandidateDB (Candidate candidate) {

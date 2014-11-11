@@ -10,7 +10,7 @@ import android.provider.BaseColumns;
  */
 public class CandidateDBHelper extends SQLiteOpenHelper implements BaseColumns {
     public static final String DB_NAME = "alex700candidate";
-    public static final int DB_VERSION = 1;
+    public static final int DB_VERSION = 2;
 
     //request for CANDIDATE
     public static final String CANDIDATE_TABLE_NAME = "candidates";
@@ -48,5 +48,6 @@ public class CandidateDBHelper extends SQLiteOpenHelper implements BaseColumns {
 
     public void deleteTable(SQLiteDatabase db) {
         db.execSQL("DROP TABLE IF EXISTS " + CANDIDATE_TABLE_NAME);
+        onCreate(db);
     }
 }

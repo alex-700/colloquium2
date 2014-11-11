@@ -50,7 +50,9 @@ public class MainActivity extends ListActivity {
             button.setEnabled(false);
         }
         listView.setAdapter(candidateAdapter);
+
         voting = new Voting(candidateAdapter, getApplicationContext());
+        voting.startDBConnection();
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,6 +81,7 @@ public class MainActivity extends ListActivity {
                 voting.restart();
                 listView.setAdapter(candidateAdapter);
                 voting = new Voting(candidateAdapter, getApplicationContext());
+                voting.startDBConnection();
             }
         });
 
