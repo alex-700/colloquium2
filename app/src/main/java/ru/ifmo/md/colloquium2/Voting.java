@@ -64,8 +64,10 @@ public class Voting {
 
     public void restart() {
         dbHelper.deleteTable(database);
+        candidateAdapter.setSum(0);
+        candidateAdapter.finish = false;
+        candidateAdapter.voting = false;
         listOfCandidate = new ArrayList<Candidate>();
-        candidateAdapter.finish();
     }
 
     public void voice(int i) {

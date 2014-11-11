@@ -99,7 +99,7 @@ public class CandidateAdapter extends BaseAdapter {
         textView.setText(current.getName());
 
 
-        if (voting) {
+        if (finish) {
             textView = (TextView) v.findViewById(R.id.voice_count);
             String s = String.valueOf(current.getCount() + " ");
             textView.setText(s);

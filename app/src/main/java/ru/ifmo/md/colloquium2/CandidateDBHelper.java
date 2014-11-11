@@ -47,7 +47,6 @@ public class CandidateDBHelper extends SQLiteOpenHelper implements BaseColumns {
     }
 
     public void deleteTable(SQLiteDatabase db) {
-        db.execSQL("DROP TABLE IF EXISTS " + CANDIDATE_TABLE_NAME);
-        onCreate(db);
+        db.delete(CANDIDATE_TABLE_NAME, null, null);
     }
 }

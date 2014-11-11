@@ -78,6 +78,7 @@ public class MainActivity extends ListActivity {
         ((Button) findViewById(R.id.restart_button)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                button.setEnabled(true);
                 voting.restart();
                 listView.setAdapter(candidateAdapter);
                 voting = new Voting(candidateAdapter, getApplicationContext());
